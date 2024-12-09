@@ -1,0 +1,35 @@
+<!-- Interpolation Syntax {{Variable Name}} -->
+<h3>Title: {{Interpolation}}</h3>
+<h3>Message: {{message}}</h3>
+<hr>
+<!-- Property Binding Syntax [attribute]="Variable Name" -->
+ <h3>Title: {{PropertyBinding}}</h3>
+ <label for="userName">
+    Interpolation: <input type="text" name="userName" id="userName" value="{{UserInput}}" disabled = "{{isDisabled}}">
+    <br><br>
+    Property Binding: <input type="text" [value]="UserInput" [disabled]="isDisabled">
+ </label>
+ <hr>
+ <!-- Event Binding Synatx (Event Type)="function(Parameter or Without Parameter)" -->
+ <h3>Title: {{EventBinding}}</h3>
+
+ <h4>Single Click Event</h4>
+ <button type="button" (click)="display('Welcome')">clickMe</button>
+
+ <h4>Double Click Event</h4>
+ <button type="button" (dblclick)="increment()">incrementMe</button>
+ <p>Incremented Value: {{counter}}</p>
+
+ <h4>KeyPress Event</h4>
+ Press the key: <input type="text" (keyup)="keyUp($event)">
+ KeyPressed: <input type="text" value="{{press}}">
+
+ <h4>Keydown Event</h4>
+ <button type="button" (Keydown.enter)="EnterPress()">Press Enter Key</button>
+ 
+ <hr>
+ <!-- Two Way Data Binding Using ngModel directive of FormsModule -->
+ <!-- ngModel syntax [(ngModel)] => it is combination of property binding and event binding -->
+ <h3>Title: {{two_way}}</h3>
+  Enter the value: <input type="text" [(ngModel)]="Two_Way_Binding">
+  Enter value is: <input type="text" value="{{Two_Way_Binding}}">

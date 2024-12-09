@@ -1,0 +1,51 @@
+<h1>ng-container tutorial</h1>
+<h2>Using Div the extra element is added in the DOM if you look in the console Element DOM</h2>
+<div>
+    <p>item 1</p>
+    <p>item 2</p>
+    <p>item 3</p>
+    <p>item 4</p>
+    <p>item 5</p>
+</div>
+
+<br>
+
+<h2>Using ng-container the extra element is not added in the DOM if you look in the console Element DOM</h2>
+<h3>Generally ng-container is used with structural directives such as if else if else switch and for</h3>
+<h3>To avoid unnecessary extra DOM is added</h3>
+<ng-container>
+    <p>item 1</p>
+    <p>item 2</p>
+    <p>item 3</p>
+    <p>item 4</p>
+    <p>item 5</p>
+</ng-container>
+
+<hr>
+
+<h1>ng-template tutorial</h1>
+<h3>Used for giving a block of the template code which can be reused multiple times throughout the document.</h3>
+<h3>Does not create an extra element inside the DOM.</h3>
+<h3>Can be accessed by a reference variable.</h3>
+
+<ng-container *ngIf="books.length > 0 else isempty">
+    <p *ngFor="let book of books">{{book}}</p>
+</ng-container>
+
+<ng-template #isempty>
+     <p>No books found</p>
+</ng-template>
+
+<hr>
+
+<div class="form-container">
+    <h1>Contact Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="user" required>
+        <button type="submit">Submit</button>
+        <ng-container *ngIf="user !== '' else empty"></ng-container>
+        <ng-template #empty>Please Enter the name</ng-template>
+    </form>
+</div>
+ 

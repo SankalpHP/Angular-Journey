@@ -1,0 +1,15 @@
+<form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+  <h2>Employee Form</h2>
+  <div formArrayName="employees">
+    <div class="employee-row" *ngFor="let emp of employees.controls; let i = index">
+      <div [formGroupName] = 'i' class="employee-fields">
+        <label>Name:</label>
+        <input type="text" formControlName="name" placeholder="Enter the employee name...">
+        <label>Job:</label>
+        <input type="text" formControlName="job" placeholder="Enter employee job">
+      </div>
+    </div>
+  </div>
+  <button type="button" class="add-button" (click)="addEmployee()">Add Employee</button>
+  <button type="submit" class="submit-button">Submit</button>
+</form>

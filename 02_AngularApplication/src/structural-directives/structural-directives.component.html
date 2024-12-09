@@ -1,0 +1,120 @@
+<h3 *ngIf="display">structural directives *ngIf is displayed</h3>
+<hr>
+<!-- Assignment of show and hide button using structural directive *ngIf -->
+ <p>Assignment of show and hide button using structural directive *ngIf</p>
+<button (click)="show()">Show</button>
+<p *ngIf="show_para"> Assignment of *ngIf Show And Hide</p>
+<hr>
+<p>{{newIF}}</p>
+<button (click)="displayTable()">display Table</button>
+@if(show_table){
+<table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+  </table>
+}@else {
+   <p>click of display table button to display a table</p>
+}
+
+<hr>
+<p>structural directives *ngFor loop displayed</p>
+<!-- structural directive *ngFor loop -->
+ <div *ngFor="let item of fullStackDev">
+    <ol style="list-style-type: none;">
+        <li>{{item.id}}</li>
+        <li>{{item.name}}</li>
+    </ol>
+ </div>
+ <hr>
+  <p>{{newFor}}</p>
+   <table>
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </thead>
+    <tbody>
+        @for (item of employee; track $index) {
+            <tr>
+                    <th>{{item.id}}</th>
+                    <th>{{item.name}}</th>
+                    <th>{{item.Salary}}</th>     
+            </tr>   
+        }@empty { 
+            <tr>
+                <th>No Employee Data is found</th>
+            </tr>
+        }
+    </tbody>
+   </table>
+ <hr>
+ <p>Assignment using structural directives *ngIf and *ngFor</p>
+ <button (click)="showName = !showName">Show Name</button>
+ <div *ngIf="showName">
+    <div *ngFor="let item of person">
+        <ol style="list-style-type: none;">
+            <li>{{item.age}}</li>
+            <li>{{item.name}}</li>
+        </ol>
+    </div>
+ </div>
+ <hr>
+
+ <!-- structural directive *ngSwitch-->
+<p>structural directive [ngSwitch] case</p>  
+<div [ngSwitch]="student.age">
+    <p *ngSwitchCase="10">The Student is 10 year old</p>
+    <p *ngSwitchCase="20">The Student is 20 year old</p>
+    <p *ngSwitchCase="30">The Student is 30 year old</p>
+    <p *ngSwitchDefault>The Student is {{student.age}} year old</p>
+</div>
+
+<hr>
+<p>{{newSwitch}}</p>  
+@switch (student.age) {
+  @case (10) {
+    <p>The Student is 10 year old</p>
+  }
+  @case (20) {
+    <p>The Student is 20 year old</p>
+  }
+  @case (30) {
+    <p>The Student is 30 year old</p>
+  }
+  @default {
+    <p>The Student is {{student.age}} year old</p>
+  }
+}

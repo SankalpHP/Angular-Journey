@@ -1,0 +1,20 @@
+<div>
+  <h1>Employee Details</h1>
+  <div class="center-buttons">
+     <span *ngFor="let emp of employees">
+        <button style="margin: 10px;" (click)="SelectEmployee(emp.id)">{{emp.name}}</button>
+     </span>
+  </div>
+   <!-- Employee Card -->
+   <div *ngIf="isShow" class="employee-card">
+    <div class="card-content">
+       <h2>Employee Information</h2>
+       <ul>
+          <li><strong>ID:</strong> {{employee.id}}</li>
+          <li><strong>Name:</strong> {{employee.name}}</li>
+          <li><strong>Department:</strong> {{employee.deparment}}</li>
+          <li><strong>Phone:</strong> {{employee.phone}}</li>
+       </ul>
+    </div>
+ </div>
+</div>

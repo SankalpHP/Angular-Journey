@@ -1,0 +1,51 @@
+/* Center-align the main container */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the <h1> and <span> elements */
+  h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  h1 span {
+    color: #ff6347; /* Tomato color for emphasis */
+  }
+  
+  /* Style the counter display */
+  h2 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Style the button */
+  button {
+    width: 300px;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Button active effect */
+  button:active {
+    background-color: #003f7f;
+  }
+  
+  div h1{
+    color: gold;
+  }

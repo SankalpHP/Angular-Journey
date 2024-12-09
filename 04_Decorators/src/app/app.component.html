@@ -1,0 +1,44 @@
+<button (click)="updateMsg()">updateMessage</button>
+<!-- @Input decorator property send data from parent to child component -->
+<!-- property binding [childcomponent] = "parentcomponent" -->
+<app-input-decorator [receiveMessage]="sendMessage"></app-input-decorator>
+
+<!-- =================================================================================================== -->
+
+<!-- @Output decorator property send data from child component to parent component  -->
+<app-output-decorator (myevent)="receiveChildEvent($event)"></app-output-decorator>
+<div>
+    <h2>Parent Component</h2>
+    <p>{{receiveMessage}}</p>
+</div>
+
+<!-- =================================================================================================== -->
+
+<button #btnRef type="button" (click)="incrementChildCounter()">counter</button>
+<app-view-child></app-view-child>
+
+<!-- =================================================================================================== -->
+ <div>
+    <h3>content child decorator demo</h3>
+    <app-content-child>
+        <p #textRef>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, 
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset 
+            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
+            Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </app-content-child>
+ </div>
+
+ <!-- ================================================================================================== -->
+ <div appHighlightElement>
+    <h3>Host Binding Decorator And Host Listener Demo</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero vitae quos autem, optio placeat eius 
+        nostrum, a quo delectus veniam maiores harum ipsa ipsum quasi! Inventore accusantium provident 
+        voluptatem cumque?
+    </p>
+</div>

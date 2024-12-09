@@ -1,0 +1,134 @@
+<div class="container">
+  <span><h1>Products</h1></span>
+  <div class="scrollable-table">
+      <table class="table table-striped justified-content-center">
+        <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="products">
+            <tr *ngFor="let product of products"  class="text-center">
+                <td style="font-weight: bold;" class="align-middle">{{product.id}}</td>
+                <td class="align-middle">{{product.name}}</td>
+                <td class="align-middle">{{product.price | currency:'USD'}}</td>
+                <td class="align-middle">
+                  <button type="button" class="btn btn-primary" style="margin-right: 2px;"  
+                          data-bs-toggle="modal" data-bs-target="#productModal"
+                          (click)="onEdit('Edit Product',product)"
+                          >Edit</button>
+                  <button type="button" class="btn btn-danger" style="margin-left: 2px;"
+                          (click)="onEdit('delete',product.id)"
+                          data-bs-toggle="modal" data-bs-target="#messageModal"
+                          >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+    <span>
+         <button type="button" class="btn btn-primary"  
+                 data-bs-toggle="modal" data-bs-target="#productModal"
+                 (click)="onEdit('Add Product','')"
+                 >Add Product</button>
+    </span>
+</div>
+
+
+<!-- Product Form Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{heading}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="productForm" (ngSubmit)="productFormSubmit()">
+              <div class="mb-3">
+                <label class="form-label">ID <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" formControlName="id" id="product_id">
+                <div>
+                   <p class="text-danger" 
+                      *ngIf="productForm.get('id')?.hasError('required') && 
+                      productForm.dirty || productForm.get('id')?.touched
+                      " style="height: 5px;">
+                      Id is required
+                   </p>
+                   <p class="text-danger" 
+                      *ngIf="productForm.get('id')?.hasError('onlyNumbers') && 
+                      productForm.get('id')?.dirty
+                      ">
+                      Only numeric characters are allowed.
+                   </p>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" formControlName="name" id="product_name">
+                <div>
+                  <p class="text-danger" 
+                      *ngIf="productForm.get('name')?.hasError('required') && 
+                      productForm.dirty || productForm.get('name')?.touched
+                      " style="height: 5px;">
+                      Name is required
+                  </p>
+                    <p class="text-danger" 
+                      *ngIf="productForm.get('name')?.hasError('onlyAlphabets') && 
+                      productForm.get('name')?.dirty
+                      ">
+                       Only alphabetic characters, numbers, and spaces between are allowed (no leading or trailing spaces).
+                    </p>
+               </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Price <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" formControlName="price" id="product_price">
+                <div>
+                  <p class="text-danger" 
+                     *ngIf="productForm.get('price')?.hasError('required') && 
+                     productForm.dirty || productForm.get('price')?.touched
+                     " style="height: 5px;">
+                     Price is required
+                  </p>
+                  <p class="text-danger" 
+                      *ngIf="productForm.get('price')?.hasError('onlyNumberType') && 
+                      productForm.get('price')?.dirty
+                      ">
+                        Only numeric values are allowed.
+                    </p>
+               </div>
+              </div>
+
+              <div class="justify-content-center d-flex gap-2">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#messageModal"
+                        >Submit</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Message Popup -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+            <h3 style="text-align: center; color: green;">{{message}}</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="margin-left: 100px;" 
+                class="btn btn-secondary" data-bs-dismiss="modal"
+                >Close</button>
+      </div>
+    </div>
+  </div>
+</div>

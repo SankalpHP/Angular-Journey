@@ -1,0 +1,4 @@
+<div *ngIf="spinner; else fetch" class="loader"></div>
+<ng-template #fetch>
+          <h1  style="text-align: center;">{{fetchData}}</h1>
+</ng-template>

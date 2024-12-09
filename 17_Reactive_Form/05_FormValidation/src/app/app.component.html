@@ -1,0 +1,15 @@
+<form [formGroup]="Login" (ngSubmit)="loginSubmit()">
+      <h2>Login</h2>
+      <div>
+           <label for="name">Name</label>
+           <input type="text" name="name" id="name" formControlName="name">
+           <label style="color: red;" *ngIf="getLoginData.name?.hasError('required') && getLoginData.name?.touched">Name is required</label>
+      </div>
+      <div>
+         <label for="email">Email</label>
+         <input type="email" name="email" id="email" formControlName="email">
+         <label style="color: red;" *ngIf="getLoginData.email?.hasError('required') && getLoginData.email?.touched">Email is required</label>
+         <label style="color: red;" *ngIf="getLoginData.email?.hasError('email') && getLoginData.email?.touched">Invalid Email Format</label>
+      </div>
+      <button type="submit">Login</button>
+</form>

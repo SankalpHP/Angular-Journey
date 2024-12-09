@@ -1,0 +1,44 @@
+/* Style for the container div */
+div {
+    display: flex; /* Arrange buttons in a row */
+    justify-content: center; /* Center the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+/* General button styles */
+button {
+    background-color: #007bff; /* Bootstrap blue color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding for larger clickable area */
+    margin: 0 10px; /* Add margin between buttons */
+    font-size: 1.1rem; /* Slightly larger text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styles for app-employee component container */
+app-employee {
+    display: block;
+    margin-top: 30px; /* Space between buttons and app-employee */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Optional media query for responsive design */
+@media (max-width: 768px) {
+    div {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    button {
+        margin: 10px 0; /* Adjust margin for stacked buttons */
+        width: 100%; /* Full width buttons on small screens */
+    }
+}

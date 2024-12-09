@@ -1,0 +1,25 @@
+<!-- json pipe in angular -->
+<h4>{{product |json | uppercase}}</h4>
+<br>
+
+<table class="student-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Major</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stu of student">
+        <td>{{stu.name}}</td>
+        <td>{{stu.age}}</td>
+        <td>{{stu.gender}}</td>
+        <td>{{stu.major}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" (click)="togglebtn()" class="json-btn">JSON Formatter</button>
+  <h6 *ngIf="showJson" class="json-output">{{student | json}}</h6>
+  

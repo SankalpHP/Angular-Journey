@@ -1,0 +1,47 @@
+h1 {
+    font-family: 'Roboto', sans-serif; /* Clean and modern font */
+    font-size: 2.5rem;                 /* Large and readable */
+    color: #333;                       /* Darker color for contrast */
+    text-align: center;                /* Center the text */
+    margin: 2rem 0;                    /* Add space above and below */
+}
+
+app-test {
+    display: block;                    /* Ensure custom elements are treated as block */
+    margin: 2rem auto;                 /* Center the app-test element */
+    width: 80%;                        /* Adjust width of the component */
+    background-color: #f8f9fa;         /* Light background for app-test */
+    padding: 2rem;                     /* Padding inside the component */
+    border-radius: 8px;                /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;               /* Slightly smaller on mobile */
+    }
+
+    app-test {
+        width: 100%;                   /* Full width on mobile */
+        padding: 1.5rem;               /* Adjust padding for mobile */
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  h4{
+     text-align: center;
+  }

@@ -1,0 +1,32 @@
+<!-- uppercase build in pipe is used -->
+<h1 style="text-align: center;">{{title|uppercase}}</h1>
+
+<!-- Date format build in pipe is used -->
+<h2>{{date|date:'dd-MM-YY'}}</h2>
+<h2>{{date|date:'dd-MMM-YY'}}</h2>
+<h2>{{date|date:'dd-MMM-YYY'}}</h2>
+<h2>{{date|date:'dd/MM/YY'}}</h2>
+<h2>{{date|date:'dd/MMM/YY'}}</h2>
+<h2>{{date|date:'dd/MMM/YYY'}}</h2>
+
+<!-- json format build in pipe used -->
+<h3>{{employee|json}}</h3>
+
+<!-- Table Example -->
+ <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employee">
+            <td>{{emp.name | uppercase}}</td>
+            <td>{{emp.city | slice:0:3 | uppercase}}</td>
+            <td>{{emp.age | number}}</td>
+        </tr>
+    </tbody>
+ </table>
+

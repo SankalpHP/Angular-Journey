@@ -1,0 +1,13 @@
+<div class="container">
+     <form [formGroup]="myForm" (ngSubmit)="valid()">
+         <label for="name">Name</label>
+         <input type="text" name="name" id="name" formControlName="name">
+        
+         <label for="url">Enter URL</label>
+         <input type="text" name="url" id="url" formControlName="url" placeholder="https://urlname.com">
+         <div class="error" *ngIf="myForm.get('url')?.dirty && myForm.get('url')?.hasError('urlValid')">
+              <sup>*</sup>URL format is not valid (https://website.com)
+         </div>
+         <button type="submit">Submit</button>
+     </form>
+</div>

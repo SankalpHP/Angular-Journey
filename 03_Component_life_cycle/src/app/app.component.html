@@ -1,0 +1,42 @@
+<!-- <h4>ngOnChanges</h4> -->
+<!-- <button (click)="updateValue()">Update value</button> -->
+<!-- With bracket [InputValue] is the property of ng-on-changes child component-->
+<!-- Without bracket InputValue is the property of app parent component-->
+<!-- <app-ng-on-changes [InputValue]="InputValue"></app-ng-on-changes> -->
+
+<!-- =========================================================================================================== -->
+
+<!-- <h4>ngOnInit</h4> -->
+<!-- <app-ng-on-init></app-ng-on-init> -->
+
+<!-- =========================================================================================================== -->
+
+<!-- <h4>ngDoCheck</h4>
+<button (click)="changeUserName()">Change User Name</button> -->
+<!-- With bracket [user] is the property of ng-on-check child component-->
+<!-- Without bracket user is the property of app parent component-->
+<!-- <app-ng-do-check [user]="user"></app-ng-do-check> -->
+
+<!-- =========================================================================================================== -->
+
+<!-- <h4>ngAfterContentInit</h4> -->
+<!-- <div>
+    <h2>Parent Component</h2>
+    <button (click)="sendDataToChild()">Generate Number</button>
+
+    <app-ng-after-content-init>
+        <h3>{{dataFormParent}}</h3>
+        <div #contentWrapper>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolorum unde! Error dolorum non, quasi
+            corrupti exercitationem consequuntur odit. Necessitatibus amet laboriosam, in aliquid debitis iste aperiam
+            dignissimos. Voluptates, fuga.
+        </div>
+    </app-ng-after-content-init>
+</div> -->
+
+<h4>ngDestroy</h4>
+<div>
+    <h2>Parent Component</h2>
+    <button (click)="toggle()">Hide/Show Child</button>
+</div>
+<app-ng-destroy  *ngIf="displayComponent"></app-ng-destroy>

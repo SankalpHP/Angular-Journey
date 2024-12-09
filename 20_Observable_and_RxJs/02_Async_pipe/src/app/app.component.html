@@ -1,0 +1,25 @@
+<!-- <h1 style="text-align: center;">Understanding the observable using async pipes</h1>
+<h2 style="text-align: center;">async pipe by default always take the last value and automatically unsubscribe the observable => {{value$ | async}} is the last value</h2> -->
+
+<div>
+   <h1>Fetching Data From JSON</h1>
+   <ng-container *ngIf="ob$ | async as data;else loading">
+              <table>
+                   <thead>
+                        <tr>
+                           <th>Name</th>
+                           <th>Slug</th>
+                        </tr>
+                   </thead>
+                   <tbody>
+                         <tr *ngFor="let categories of data">
+                             <td>{{categories.name}}</td>
+                             <td>{{categories.slug}}</td>
+                         </tr>
+                   </tbody>
+              </table>
+   </ng-container>
+   <ng-template #loading>
+          <h1>Loading....</h1>
+   </ng-template>
+</div>

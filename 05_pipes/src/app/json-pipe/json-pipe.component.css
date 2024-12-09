@@ -1,0 +1,45 @@
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  .student-table th,
+  .student-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .student-table thead tr {
+    background-color: #f2f2f2;
+  }
+  
+  .json-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .json-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .json-output {
+    margin-top: 15px;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    white-space: pre-wrap; /* Ensures the JSON is displayed in a readable format */
+  }
+  

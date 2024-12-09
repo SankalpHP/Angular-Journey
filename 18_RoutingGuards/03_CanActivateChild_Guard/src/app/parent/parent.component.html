@@ -1,0 +1,11 @@
+<div class="parent-container">
+    <h2>Parent Component</h2>
+    <div class="buttons-container">
+        <button routerLink="/parent/child1" class="child-button">Child1</button>
+        <button routerLink="/parent/child2" class="child-button">Child2</button>
+        <button (click)="enable()" class="enable-button">Enable</button>
+    </div>
+</div>
+<div class="router-outlet-container">
+    <router-outlet></router-outlet>
+</div>

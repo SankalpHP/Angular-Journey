@@ -1,0 +1,45 @@
+/* Style the table */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the table header */
+.employee-table th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+}
+
+/* Style the table rows */
+.employee-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Add hover effect for table rows */
+.employee-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Alternate row coloring */
+.employee-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style the clickable link */
+.employee-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.employee-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

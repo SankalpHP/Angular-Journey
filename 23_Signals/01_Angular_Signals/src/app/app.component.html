@@ -1,0 +1,25 @@
+<h1>Angular <span>Signals</span></h1>
+
+<!-- Creating the Signals -->
+<div>
+   <h1>Creating the signals</h1>
+   <br>
+    <button type="button" (click)="incrementCounter()">Increment Counter</button>
+   <h2>{{count()}}</h2>
+</div>
+
+<!-- Updating the Signals -->
+ <div>
+   <h1>Updating the signals</h1>
+   <br>
+    <h2>{{cart() | json}}</h2>
+ </div>
+
+ <!-- Computed the Signals -->
+  <div>
+      <h1>Computed the signals</h1>
+       <br>
+      <h2>Original Signal:- {{createCount() | json}}</h2>
+       <br>
+      <h2>Computed Signal:- {{computedCount() | json}}</h2>
+  </div>

@@ -1,0 +1,9 @@
+<h1>Employee</h1>
+<div>
+    <ul>
+        <li *ngFor="let emp of employee">
+            <a [routerLink]="['/emp']" [queryParams]="{id:emp.id,name:emp.name}">{{emp.name}}</a>
+        </li>
+    </ul>
+</div>
+<h2>Look At the URL the data is passing as a query in url</h2>

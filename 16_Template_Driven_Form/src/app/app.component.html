@@ -1,0 +1,5 @@
+<form #myForm="ngForm" (ngSubmit)="formData(myForm)">
+     <label for="name">Name</label>
+     <input type="text" id="name" name="username" ngModel required/>
+     <button type="submit">submit</button>
+</form>

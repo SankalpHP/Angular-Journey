@@ -1,0 +1,16 @@
+<!-- number inbuilt pipes in the angular -->
+<h2>{{pi | number:'1.2-2'}}</h2>
+<h2>{{pi | number:'1.3-3'}}</h2>
+
+<!-- For currency, use the currency pipe: -->
+<h2>{{ 1234567.89 | currency:'USD' }}</h2>
+
+<!-- Assignment convert wt in pound to kg -->
+<div class="converter-container">
+    <label for="convert" class="converter-label">Enter the weight in pounds:</label>
+    <input type="number" id="convert" [(ngModel)]="weightPound" class="converter-input">
+    <button type="button" (click)="convertPoundToKg()" class="converter-button">Convert</button>
+    <h4 class="converter-result">{{weightKg | number:'1.2-2'}} Kg</h4>
+</div>
+  
+

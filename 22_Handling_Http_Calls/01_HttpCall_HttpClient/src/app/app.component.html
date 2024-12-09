@@ -1,0 +1,29 @@
+<div>
+   <button type="button" (click)="getProduct()">Get Product</button>
+   <button type="button" (click)="getUser()">Get User</button>
+</div>
+<ng-container>
+     <h4>{{product | json}}</h4>
+
+     <div *ngIf="loadData">
+      <!-- <h4>{{user$ | async | json}}</h4> -->
+         <table class="table">
+               <thead>
+                  <tr>
+                     <td>Name</td>
+                     <td>Email</td>
+                     <td>Phone</td>
+                     <td>Address(Zipcode)</td>
+                  </tr>
+               </thead>
+               <tbody *ngIf="(user$ | async) as data">
+                  <tr *ngFor="let user of data">
+                      <td>{{user.name}}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.phone}}</td>
+                      <td>{{user.address.street}}, {{user.address.city}}, {{user.address.zipcode}}</td>
+                  </tr>
+               </tbody>
+         </table>
+     </div>
+</ng-container>

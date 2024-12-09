@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="addItemForm">
+        <h2>Add Item</h2>
+        <form (ngSubmit) = 'addItem()'>
+            <label for="itemName">Item Name:</label>
+            <input type="text" name="itemName" id="itemName" [(ngModel)] = "newItemName" required>
+
+            <label for="itemPrice">Item Price:</label>
+            <input type="number" name="itemPrice" id="itemPrice" [(ngModel)]="newItemPrice" required>
+            <button class="addItem" type="submit">Add Item</button>
+        </form>
+    </div>
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul>
+            <li *ngFor="let item of itemList()">
+                {{item.name}} - {{item.price | currency:"USD"}}
+                <button type="button" (click)="removeItem(item)">Remove</button>
+            </li>
+            <li><h4>Total Price: {{totalPrice() | currency:"USD"}}</h4></li>
+        </ul>
+    </div>
+</div>

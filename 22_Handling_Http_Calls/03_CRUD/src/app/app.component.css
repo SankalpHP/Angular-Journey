@@ -1,0 +1,39 @@
+.container{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+/* Container for scrollable table */
+.scrollable-table {
+    max-height: 550px; /* Adjust height as needed */
+    overflow-y: auto;
+    margin-bottom: 20px; /* Space below the table */
+    border: 1px solid #ddd; /* Optional border */
+}
+
+/* Styling the scrollbar */
+.scrollable-table::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollable-table::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Optional thumb border */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb hover color */
+}
+
+/* Add space and styling to buttons */
+button.btn {
+    margin: 0 2px; /* Spacing between buttons */
+}
+

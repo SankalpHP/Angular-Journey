@@ -1,0 +1,39 @@
+p{
+    font-size: 50px;
+}
+
+.custom-card {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .custom-card .card-body {
+    padding: 20px; /* More padding */
+  }
+  
+  .custom-card .card-title {
+    color: #007bff; /* Blue title */
+    font-weight: bold; /* Bold title */
+  }
+  
+  .custom-card .card-subtitle {
+    color: #6c757d; /* Muted subtitle color */
+    margin-bottom: 15px; /* Add spacing below subtitle */
+  }
+  
+  .custom-card .card-text {
+    font-size: 1rem; /* Set font size for card text */
+    line-height: 1.5; /* Line height for better readability */
+  }
+  
+  .custom-card .card-link {
+    color: #007bff; /* Blue links */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .custom-card .card-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

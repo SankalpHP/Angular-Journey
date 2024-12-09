@@ -1,0 +1,66 @@
+<h3>{{title}}</h3>
+
+<hr>
+
+<h3>{{title_class}}</h3>
+<p [ngClass]="'p_style'">Learning attribute directives in angular</p>
+<hr>
+<h4>Assigmnent using "ngClass" if the input is not empty add the CSS</h4>
+<label [ngClass]="userInput?'p_style':''" >Enter the values</label>
+<input type="text"[ngClass]="userInput?'p_style':''" [(ngModel)]="userInput">
+<p>{{userInput}}</p>
+
+<hr>
+
+<h3>Assignment [ng-Class] create a toggle mode onclick event the bg should change</h3>
+<div [ngClass]="mode">
+    <button (click)="colorMode()">toggle mode</button>
+    <p ngClass="">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece 
+        of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, 
+        a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin 
+        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+        literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 
+        of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This 
+        book is a treatise on the theory of ethics, very popular during the Renaissance. The first line 
+        of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    </p>
+</div>
+
+<hr>
+<h3>{{title_style}}</h3>
+<p>learn attribute directives styling using ngstyle directive</p>
+<h4 [ngStyle]="{'background-color':'yellow'}">style attribute directive</h4>
+<div [ngStyle]="stylemode">
+    <button (click)="colorStyle()">toggle mode</button>
+    <p ngClass="">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece 
+        of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, 
+        a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin 
+        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+        literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 
+        of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This 
+        book is a treatise on the theory of ethics, very popular during the Renaissance. The first line 
+        of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    </p>
+</div>
+
+<hr>
+
+<h3>Assignment Change the input field color when it meets a certain conditions </h3>
+<form *ngIf="!formSubmitted">
+    <h1>Submit Form</h1>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="nm" 
+        [ngStyle]="{'background-color': nm ? 'lightgreen' : '#ffb6c1'}" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" [(ngModel)]="em" 
+        [ngStyle]="{'background-color': emailIsValid ? 'lightgreen' : '#ffb6c1'}" 
+        (input)="checkEmailValidation(em)" required/>
+    </div>
+
+    <button type="submit" (click)="showMessage()">Submit</button>
+</form>
+<p *ngIf="formSubmitted">Form is successfully submitted</p>

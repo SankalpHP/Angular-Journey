@@ -1,0 +1,48 @@
+/* Container for the parent component */
+.parent-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling the button container to align buttons */
+.buttons-container {
+    margin-bottom: 20px;
+}
+
+/* Common styles for all buttons */
+.child-button, .enable-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Specific styles for child buttons */
+.child-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.child-button:hover {
+    background-color: #0056b3;
+}
+
+/* Specific style for the enable button */
+.enable-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.enable-button:hover {
+    background-color: #218838;
+}
+
+/* Styling the router outlet container */
+.router-outlet-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

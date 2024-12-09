@@ -1,0 +1,54 @@
+<app-intro-pipes></app-intro-pipes>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<app-slice-pipe></app-slice-pipe>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<app-number-pipe></app-number-pipe>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<app-json-pipe></app-json-pipe>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<h2 style="text-align: center;">
+    {{'Good Afternoon'| appendText: ' Custom pipe'}}
+</h2>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<h2>Given Array: <span>[{{numbers}}]</span></h2>
+<div class="button-container">
+    <button type="button" (click)="sortOrder = 'asc'; showSorting()">Sort Ascending</button>
+    <button type="button" (click)="sortOrder = 'desc'; showSorting()">Sort Descending</button>
+</div>
+<div *ngIf="showList" class="sorted-output">
+    <h5 *ngIf="sortOrder === 'asc'">Ascending Order</h5>
+    <h5 *ngIf="sortOrder === 'desc'">Descending Order</h5>
+    <ul class="number-list">
+        <li *ngFor="let number of sortedNumbers">{{number}}</li>
+    </ul>
+</div>
+<h1>
+    ---------------------------------------------------------------------------------------------------------
+    -------------------
+</h1>
+<div class="container">
+    <h3>Letter Count</h3>
+    <div class="inputbox">
+        <input type="text" required [(ngModel)]="stringVal"/>
+        <span>Enter String</span>
+    </div>
+    <div class="result-container">
+        <p>{{stringVal | letterCount}} letters</p>
+    </div>
+</div>
+

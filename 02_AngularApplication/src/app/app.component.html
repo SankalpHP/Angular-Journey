@@ -1,0 +1,65 @@
+<!-- <app-structural-directives></app-structural-directives>
+<hr> -->
+<!-- <app-atttibute-directives></app-atttibute-directives>
+ <hr> -->
+ <!-- <app-ng-containers></app-ng-containers>
+ <hr> -->
+ <h3>The *ngTemplate outlet directive is a structural directive used for rendering 
+     templates dynamically inside the same or different components</h3>
+
+<ul>
+    <li>The *ngTemplate outlet directive is handy & powerful directive to use in the application.</li>
+    <li>It renders the templates easily.</li>
+    <li>I can communicate the data from one component to another component.</li>
+</ul> 
+
+<ng-template #show let-msg="showMessage">
+    <p style="text-align: center;font-size: 30px;">output:{{msg}}</p>
+</ng-template>
+ 
+<ng-container *ngTemplateOutlet="show;context:{showMessage:calc()}"></ng-container>
+
+<hr>
+
+<ng-template #display let-people="showDetail">
+    <p style="text-align: center;font-size: 30px;">output:{{people.name}} {{people.age}} {{people.position}}</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="display;context:{showDetail:person}"></ng-container>
+
+<hr>
+
+<h3>Display the values using implicit keyword same example</h3>
+<ul>
+    <li>Let's render the template using the "$implicit" keyword which is used to provide an 
+        implicit value to a template without giving the additional variable inside the 
+        context
+    </li>
+</ul>
+
+<ng-template #display1 let-people>
+    <p style="text-align: center;font-size: 30px;">output:{{people.name}} {{people.age}} {{people.position}}</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="display1;context:{$implicit:person}"></ng-container>
+
+<br>
+
+<ng-template #displayEmployee let-emp>
+    <table border="1" style="width: 100%; text-align: left;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employee">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.salary | currency }}</td>
+          </tr>
+        </tbody>
+      </table>      
+</ng-template>
+<ng-container *ngTemplateOutlet="displayEmployee;context:{$implicit:employee}"></ng-container>
+ 

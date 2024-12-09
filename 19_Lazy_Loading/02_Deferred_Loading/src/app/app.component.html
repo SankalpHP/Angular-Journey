@@ -1,0 +1,18 @@
+<h1>Application Component</h1>
+
+<div>
+  @defer () {
+    <app-test></app-test>
+ }
+ @placeholder(minimum 3s) {
+   <div class="loader"></div>
+   <h4>Content is getting loaded...</h4>
+ } 
+ @loading (minimum 4s){
+  <h4>Loading the Content</h4>
+ }
+ @error {
+  <h4>Something Went Wrong!</h4>
+ }
+</div>
+
